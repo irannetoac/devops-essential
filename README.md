@@ -1,3 +1,5 @@
+Author: Iran Macedo
+
 This is an application example from AC DevOps training. There are 2 main parts:
 
 * The application is an API to store book information.
