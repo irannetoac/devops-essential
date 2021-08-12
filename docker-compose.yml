@@ -1,14 +1,6 @@
 version: '3.7'
 
 services:
-  mongodb:
-    image: irannetoac/devops-essentials-mongodb
-    build:
-      context: db/
-      dockerfile: Dockerfile
-    ports:
-      - 27017:27017
-
   book-app:
     image: irannetoac/devops-essentials-book
     build:
