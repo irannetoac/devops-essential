@@ -1,29 +1,24 @@
 package com.example.demo.model;
 
-import org.springframework.data.mongodb.core.mapping.Document;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 
-import org.springframework.data.annotation.Id;
-
-@Document(collection = "book")
+@Entity
 public class Book {
     @Id
-    private String id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    Long id;
     String title;
     String author;
     int pages;
 
-    public Book(String id, String title, String author, int pages) {
-        this.id = id;
-        this.title = title;
-        this.author = author;
-        this.pages = pages;
-    }
-
-    public String getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
