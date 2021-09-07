@@ -5,6 +5,11 @@ This is an application example from AC DevOps training. There are 2 main parts:
 * The application is an API to store book information.
 * Mongo DB instance (db folder)
 
+## Updated lesson
+
+* Lesson 2 (AWS): [https://gitlab.com/devopsclassroom/AWS.md](here)
+* Lesson 3 (IaaC): [https://gitlab.com/devopsclassroom/terraform.md](here)
+
 ## Run with play with docker
 
 1. Create a new instance on `play with docker`
