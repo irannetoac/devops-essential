@@ -37,5 +37,18 @@ resource "aws_security_group_rule" "allowmysql" {
   to_port           = "3306"
   protocol          = "tcp"
   security_group_id = "sg-b3299cf8"
-  self              = "true" 
+  self              = true 
+}
+
+resource "aws_db_instance" "database" {
+  allocated_storage    = 10
+  engine               = "mysql"
+  engine_version       = "5.7"
+  instance_class       = "db.t2.micro"
+  name                 = "book"
+  username             = "admin"
+  password             = "adminadmin"
+  parameter_group_name = "default.mysql5.7"
+  skip_final_snapshot  = true
+  publicly_accessible  = true
 }
