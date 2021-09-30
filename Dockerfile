@@ -14,7 +14,7 @@ RUN gradle clean build
     
 # actual container
 FROM adoptopenjdk/openjdk11:alpine-jre
-ENV ARTIFACT_NAME=demo-0.0.1-SNAPSHOT.jar
+ENV ARTIFACT_NAME=demo-1.jar
 ENV APP_HOME=/usr/app/
     
 WORKDIR $APP_HOME
