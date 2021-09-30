@@ -14,19 +14,15 @@ cache:
     - .gradle/wrapper
     - .gradle/caches
 
-uild:
+build:
   stage: build
   script:
     - ./gradlew assemble
+    - ./gradlew check
   artifacts:
     paths:
       - build/libs/*.jar
     expire_in: 1 week
-
-test:
-  stage: test
-  script:
-    - ./gradlew check
 
 # production:
 #   stage: deploy
