@@ -9,7 +9,7 @@ pipeline {
 
     stage('build') {
       steps {
-        sh './gradlew clean build'
+        sh './gradlew clean build --refresh-dependecies --info'
       }
     }
 
@@ -27,7 +27,7 @@ pipeline {
 
     stage('build docker image') {
       steps {
-        sh 'docker build .'
+        sh './gradlew build --refresh-dependecies --info'
       }
     }
   }
