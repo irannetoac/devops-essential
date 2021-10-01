@@ -28,7 +28,7 @@ version = '1'
 sourceCompatibility = '11'
 
 repositories {
-	mavenCentral()
+    add buildscript.repositories.getByName("maven-main-cache")
 }
 
 dependencies {
