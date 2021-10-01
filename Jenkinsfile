@@ -7,11 +7,21 @@ pipeline {
       }
     }
 
-    stage('No Converter-0') {
+    stage('build') {
       steps {
-        echo 'No converter for Builder: hudson.plugins.gradle.Gradle'
+        gradle clean build
       }
     }
 
+    stage('test') {
+      steps {
+        gradle test
+      }
+    }
+
+    stage('publish') {
+      steps {
+        gradle publish
+      }
   }
 }
