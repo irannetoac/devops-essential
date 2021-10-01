@@ -21,7 +21,7 @@ pipeline {
 
     stage('publish') {
       steps {
-        sh './gradlew publish'
+        sh './gradlew artifactoryPublish'
       }
     }
   }
