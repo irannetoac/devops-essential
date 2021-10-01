@@ -9,7 +9,7 @@ pipeline {
 
     stage('build') {
       steps {
-        sh './gradlew clean build --refresh-dependecies --info'
+        sh './gradlew clean build --info'
       }
     }
 
