@@ -43,7 +43,7 @@ test {
 }
 
 artifactory {
-    contextUrl = "${artifactory_contextUrl}"
+    contextUrl = "https://irannetoac.jfrog.io/artifactory/my-artifacts-libs-release-local/"
     publish {
         repository {
             repoKey = 'my-artifacts-libs-release-local'
