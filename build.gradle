@@ -42,7 +42,7 @@ artifactory {
     contextUrl = "https://irannetoac.jfrog.io/artifactory/"   //The base Artifactory URL if not overridden by the publisher/resolver
     publish {
         repository {
-            repoKey = 'my-gradle-release-local'
+            repoKey = 'my-gradle-dev-local'
             username = "iran.neto@avenuecode.com"
             password = "AKCp8k84nWDeykbeU54DLqDcHb1vNHrpYj88Beoh5Ee59ogUeQw4zDJWpquJFx6KNxWM9Spbx"
             maven = true
@@ -51,7 +51,7 @@ artifactory {
     }
     resolve {
         repository {
-            repoKey = 'my-gradle-release'
+            repoKey = 'my-gradle-dev'
 			username = "iran.neto@avenuecode.com"
             password = "AKCp8k84nWDeykbeU54DLqDcHb1vNHrpYj88Beoh5Ee59ogUeQw4zDJWpquJFx6KNxWM9Spbx"
             maven = true
