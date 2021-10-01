@@ -39,7 +39,7 @@ publishing {
 }
 
 artifactory {
-    contextUrl = "https://irannetoac.jfrog.io/artifactory/"   //The base Artifactory URL if not overridden by the publisher/resolver
+    contextUrl = "https://irannetoac.jfrog.io/artifactory"   //The base Artifactory URL if not overridden by the publisher/resolver
     publish {
         repository {
             repoKey = 'my-gradle-dev-local'
