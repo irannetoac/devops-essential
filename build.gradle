@@ -22,6 +22,7 @@ plugins {
 
 apply plugin: 'maven-publish'
 apply plugin: "com.jfrog.artifactory"
+apply plugin: 'artifactory-publish'
 
 group = 'com.example'
 version = '1'
@@ -50,12 +51,15 @@ artifactory {
             username = "iran.neto@avenuecode.com"
             password = "AKCp8k84nWDeykbeU54DLqDcHb1vNHrpYj88Beoh5Ee59ogUeQw4zDJWpquJFx6KNxWM9Spbx"
             maven = true
-
         }       
         defaults {
             publications ('mavenJava')
         }
     }
+}
+
+artifactoryPublish { 
+    dependsOn jar
 }
 
 publishing {
