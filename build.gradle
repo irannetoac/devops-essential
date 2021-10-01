@@ -65,10 +65,21 @@ artifactoryPublish {
     dependsOn jar
 }
 
-// publishing {
-//     publications {
-//         mavenJava(MavenPublication) {
-//             from components.java
-//         }
-//     }
-// }
+publishing {
+    publications {
+        pluginMaven(MavenPublication) {
+            from components.java
+        }
+        samplePluginMarkerMaven(MavenPublication) {
+            groupId gradlePlugin.plugins.sample.id
+            artifactId gradlePlugin.plugins.sample.id + ".gradle.plugin"
+            pom.withXml {
+                def dependency = asNode().appendNode('dependencies').appendNode('dependency')
+                dependency.appendNode('groupId', group)
+                dependency.appendNode('artifactId', name)
+                dependency.appendNode('version', version)
+            }
+        }
+    }
+	
+}
