@@ -9,19 +9,19 @@ pipeline {
 
     stage('build') {
       steps {
-        gradle clean build
+        @gradle clean build
       }
     }
 
     stage('test') {
       steps {
-        gradle test
+        @gradle test
       }
     }
 
     stage('publish') {
       steps {
-        gradle publish
+        @gradle publish
       }
     }
   }
