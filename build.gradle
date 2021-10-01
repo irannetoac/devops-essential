@@ -71,4 +71,4 @@ artifactoryPublish {
 //             from components.java
 //         }
 //     }
-}
+// }
