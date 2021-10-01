@@ -1,3 +1,19 @@
+buildscript {
+    repositories {
+        maven {
+            url 'https://irannetoac.jfrog.io/artifactory/my-artifacts-libs-release-local/'
+            credentials {
+                username = "iran.neto@avenuecode.com"
+            	password = "AKCp8k84nWDeykbeU54DLqDcHb1vNHrpYj88Beoh5Ee59ogUeQw4zDJWpquJFx6KNxWM9Spbx"
+            }
+            name = "maven-main-cache"
+        }
+    }
+    dependencies {
+        classpath "org.jfrog.buildinfo:build-info-extractor-gradle:3.0.1"
+    }
+}
+
 plugins {
 	id 'org.springframework.boot' version '2.5.2'
 	id 'io.spring.dependency-management' version '1.0.11.RELEASE'
@@ -24,22 +40,6 @@ dependencies {
 
 test {
 	useJUnitPlatform()
-}
-
-buildscript {
-    repositories {
-        maven {
-            url 'https://irannetoac.jfrog.io/artifactory/my-artifacts-libs-release-local/'
-            credentials {
-                username = "iran.neto@avenuecode.com"
-            	password = "AKCp8k84nWDeykbeU54DLqDcHb1vNHrpYj88Beoh5Ee59ogUeQw4zDJWpquJFx6KNxWM9Spbx"
-            }
-            name = "maven-main-cache"
-        }
-    }
-    dependencies {
-        classpath "org.jfrog.buildinfo:build-info-extractor-gradle:3.0.1"
-    }
 }
 
 artifactory {
