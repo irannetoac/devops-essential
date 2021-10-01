@@ -9,19 +9,19 @@ pipeline {
 
     stage('build') {
       steps {
-        gradle('clean', 'build')
+        sh './gradlew clean build'
       }
     }
 
     stage('test') {
       steps {
-        gradle('test')
+        sh './gradlew test'
       }
     }
 
     stage('publish') {
       steps {
-        gradle('publish')
+        sh './gradlew publish'
       }
     }
   }
