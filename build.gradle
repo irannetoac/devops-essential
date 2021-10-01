@@ -14,14 +14,15 @@ buildscript {
 	}
 }
 
-repositories {
-    mavenCentral()
-    mavenLocal()
-}
 
 plugins {
 	id 'org.springframework.boot' version '2.5.2'
 	id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+}
+
+repositories {
+    mavenCentral()
+    mavenLocal()
 }
 
 apply plugin: 'java'
