@@ -27,7 +27,6 @@ repositories {
 
 apply plugin: 'java'
 apply plugin: 'groovy'
-apply plugin: 'maven'
 apply plugin: 'maven-publish'
 apply plugin: 'com.jfrog.artifactory'
 
