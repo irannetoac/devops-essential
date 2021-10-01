@@ -9,20 +9,26 @@ buildscript {
             name = "maven-main-cache"
         }
     }
-    dependencies {
-        classpath "org.jfrog.buildinfo:build-info-extractor-gradle:3.0.1"
-    }
+	dependencies { 
+		classpath "org.jfrog.buildinfo:build-info-extractor-gradle:4.5.4" 
+	}
+}
+
+repositories {
+    mavenCentral()
+    mavenLocal()
 }
 
 plugins {
 	id 'org.springframework.boot' version '2.5.2'
 	id 'io.spring.dependency-management' version '1.0.11.RELEASE'
-	id 'java'
 }
 
+apply plugin: 'java'
+apply plugin: 'groovy'
+apply plugin: 'maven'
 apply plugin: 'maven-publish'
-apply plugin: "com.jfrog.artifactory"
-apply plugin: 'artifactory-publish'
+apply plugin: 'com.jfrog.artifactory'
 
 group = 'com.example'
 version = '1'
@@ -44,7 +50,7 @@ test {
 }
 
 artifactory {
-    contextUrl = "https://irannetoac.jfrog.io/artifactory/my-artifacts-libs-release-local/"
+    contextUrl = "https://irannetoac.jfrog.io/artifactory"
     publish {
         repository {
             repoKey = 'my-artifacts-libs-release-local'
@@ -52,9 +58,9 @@ artifactory {
             password = "AKCp8k84nWDeykbeU54DLqDcHb1vNHrpYj88Beoh5Ee59ogUeQw4zDJWpquJFx6KNxWM9Spbx"
             maven = true
         }       
-        defaults {
-            publications ('mavenJava')
-        }
+		publishBuildInfo = true
+        publishArtifacts = true
+        publishPom = true
     }
 }
 
