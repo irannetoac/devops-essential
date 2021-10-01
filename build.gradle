@@ -1,85 +1,73 @@
 buildscript {
     repositories {
-        maven {
-            url 'https://irannetoac.jfrog.io/artifactory/my-artifacts-libs-release-local/'
-            credentials {
-                username = "iran.neto@avenuecode.com"
-            	password = "AKCp8k84nWDeykbeU54DLqDcHb1vNHrpYj88Beoh5Ee59ogUeQw4zDJWpquJFx6KNxWM9Spbx"
-            }
-            name = "maven-main-cache"
-        }
+		maven {
+			url "https://irannetoac.jfrog.io/artifactory/jcenter"
+			allowInsecureProtocol = true
+		}     
     }
-	dependencies { 
-		classpath "org.jfrog.buildinfo:build-info-extractor-gradle:4.5.4" 
-	}
+    dependencies {
+        classpath(group: 'org.jfrog.buildinfo', name: 'build-info-extractor-gradle', version: '4.+')
+    }
 }
-
 
 plugins {
 	id 'org.springframework.boot' version '2.5.2'
 	id 'io.spring.dependency-management' version '1.0.11.RELEASE'
 }
 
-repositories {
-    mavenCentral()
-    mavenLocal()
+allprojects {
+    repositories {
+        maven {
+            url "https://irannetoac.jfrog.io/artifactory/my-gradle-release/"
+        }
+    }
 }
-
-apply plugin: 'java'
-apply plugin: 'groovy'
-apply plugin: 'maven-publish'
-apply plugin: 'com.jfrog.artifactory'
 
 group = 'com.example'
 version = '1'
 sourceCompatibility = '11'
 
-repositories {
-    add buildscript.repositories.getByName("maven-main-cache")
+apply plugin: 'com.jfrog.artifactory'
+apply plugin: 'java'
+apply plugin: 'maven-publish'
+
+publishing {
+    publications {
+        mavenJava(MavenPublication) {
+            from components.java
+        }
+    }
 }
+
+artifactory {
+    contextUrl = "https://irannetoac.jfrog.io/artifactory/"   //The base Artifactory URL if not overridden by the publisher/resolver
+    publish {
+        repository {
+            repoKey = 'my-gradle-release-local'
+            username = "iran.neto@avenuecode.com"
+            password = "AKCp8k84nWDeykbeU54DLqDcHb1vNHrpYj88Beoh5Ee59ogUeQw4zDJWpquJFx6KNxWM9Spbx"
+            maven = true
+            
+        }
+    }
+    resolve {
+        repository {
+            repoKey = 'my-gradle-release'
+			username = "iran.neto@avenuecode.com"
+            password = "AKCp8k84nWDeykbeU54DLqDcHb1vNHrpYj88Beoh5Ee59ogUeQw4zDJWpquJFx6KNxWM9Spbx"
+            maven = true
+            
+        }
+    }
+}
+
+
 
 dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
 	implementation 'mysql:mysql-connector-java:8.0.15'
+	testImplementation 'junit:junit:4.7'
 }
 
-test {
-	useJUnitPlatform()
-}
-
-artifactory {
-    contextUrl = "https://irannetoac.jfrog.io/artifactory"
-    publish {
-        repository {
-            repoKey = 'my-artifacts-libs-release-local'
-            username = "iran.neto@avenuecode.com"
-            password = "AKCp8k84nWDeykbeU54DLqDcHb1vNHrpYj88Beoh5Ee59ogUeQw4zDJWpquJFx6KNxWM9Spbx"
-            maven = true
-        }       
-    }
-}
-
-artifactoryPublish { 
-    dependsOn jar
-}
-
-publishing {
-    publications {
-        pluginMaven(MavenPublication) {
-            from components.java
-        }
-        samplePluginMarkerMaven(MavenPublication) {
-            groupId gradlePlugin.plugins.sample.id
-            artifactId gradlePlugin.plugins.sample.id + ".gradle.plugin"
-            pom.withXml {
-                def dependency = asNode().appendNode('dependencies').appendNode('dependency')
-                dependency.appendNode('groupId', group)
-                dependency.appendNode('artifactId', name)
-                dependency.appendNode('version', version)
-            }
-        }
-    }
-	
-}
