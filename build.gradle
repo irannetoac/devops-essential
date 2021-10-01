@@ -4,6 +4,17 @@ plugins {
 	id 'java'
 }
 
+repositories {
+    mavenCentral()
+    maven {
+        +url "https://irannetoac.jfrog.io/artifactory/default-maven-virtual/"
+        credentials {               // Optional resolver credentials (leave out to use anonymous resolution)
+            username = "iran.neto@avenuecode.com" // Artifactory user name
+            password = "AKCp8k84nWDeykbeU54DLqDcHb1vNHrpYj88Beoh5Ee59ogUeQw4zDJWpquJFx6KNxWM9Spbx" // Password or API Key
+        }
+    }
+}
+
 group = 'com.example'
 version = '1'
 sourceCompatibility = '11'
