@@ -58,9 +58,6 @@ artifactory {
             password = "AKCp8k84nWDeykbeU54DLqDcHb1vNHrpYj88Beoh5Ee59ogUeQw4zDJWpquJFx6KNxWM9Spbx"
             maven = true
         }       
-		publishBuildInfo = true
-        publishArtifacts = true
-        publishPom = true
     }
 }
 
