@@ -1,1 +1,17 @@
 .idea/*
+.gradle/*
+/build/resources/main/application.properties
+/build/classes/java/main/com/example/demo/model/Book.class
+/build/classes/java/main/com/example/demo/controller/BookController.class
+/build/classes/java/main/com/example/demo/repo/BookRepo.class
+/build/bootJarMainClassName
+/build/build-info.json
+/build/libs/demo-1.jar
+/build/libs/demo-1-plain.jar
+/build/classes/java/main/com/example/demo/DemoApplication.class
+/build/tmp/bootJar/MANIFEST.MF
+/build/tmp/jar/MANIFEST.MF
+/build/moduleInfo.json
+/build/tmp/compileJava/previous-compilation-data.bin
+/terraform/.terraform/providers/registry.terraform.io/hashicorp/aws/3.58.0/darwin_amd64/terraform-provider-aws_v3.58.0_x5
+/terraform/.terraform/providers/registry.terraform.io/hashicorp/tls/3.1.0/darwin_amd64/terraform-provider-tls_v3.1.0_x5
