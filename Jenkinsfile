@@ -27,7 +27,7 @@ pipeline {
 
     stage('build docker image') {
       steps {
-        sh '${env.DOCKER} --version'
+        sh 'docker build .'
       }
     }
   }
