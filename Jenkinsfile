@@ -1,7 +1,8 @@
 pipeline {
   agent {
-    dockerfile true
+    label "linux"
   }
+
   stages {
     stage('Checkout') {
       steps {
@@ -29,6 +30,7 @@ pipeline {
 
     stage('build docker image') {
       steps {
+        sh """docker build -t hello ."""
         sh 'echo myCustomEnvVar = $myCustomEnvVar'
       }
     }
