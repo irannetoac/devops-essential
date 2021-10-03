@@ -42,7 +42,7 @@ pipeline {
 
     stage('push docker image') {
       steps {
-        sh 'docker push demo-application:latest'
+        sh 'docker push irannetoac.jfrog.io/demo-application:latest'
       }
     }
   }
