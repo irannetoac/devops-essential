@@ -1,6 +1,6 @@
 pipeline {
   agent any
-  environments {
+  environment {
     ARTIFACTORY_CREDENTIALS = credentials('irannetac-jfrog')
   }
   stages {
