@@ -30,7 +30,7 @@ pipeline {
 
     stage('build docker image') {
       steps {
-        sh 'docker build . -t demo-application:latest'
+        sh 'docker build . -t irannetoac.jfrog.io/default-docker-local/demo-application:latest'
       }
     }
 
