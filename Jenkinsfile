@@ -1,5 +1,7 @@
 pipeline {
-  agent any
+  agent {
+    dockerfile true
+  }
   stages {
     stage('Checkout') {
       steps {
@@ -27,7 +29,7 @@ pipeline {
 
     stage('build docker image') {
       steps {
-        sh './gradlew build --refresh-dependecies --info'
+        sh 'echo myCustomEnvVar = $myCustomEnvVar'
       }
     }
   }
