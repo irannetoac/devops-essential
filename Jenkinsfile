@@ -1,7 +1,5 @@
 pipeline {
-  agent {
-    label "docker"
-  }
+  agent any
   stages {
     stage('Checkout') {
       steps {
@@ -29,7 +27,7 @@ pipeline {
 
     stage('build docker image') {
       steps {
-        sh './gradlew build --refresh-dependecies --info'
+        sh 'docker --version'
       }
     }
   }
