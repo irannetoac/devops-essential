@@ -1,6 +1,6 @@
 pipeline {
   agent {
-    label "macOS"
+    dockerfile true
   }
   stages {
     stage('Checkout') {
