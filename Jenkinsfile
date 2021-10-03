@@ -1,5 +1,7 @@
 pipeline {
-  agent any
+  agent {
+    label "macOS"
+  }
   stages {
     stage('Checkout') {
       steps {
