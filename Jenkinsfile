@@ -45,5 +45,11 @@ pipeline {
         sh 'docker push irannetoac.jfrog.io/default-docker-local/demo-application:latest'
       }
     }
+
+    stage('provisioning the infrastructure'){
+      steps {
+        sh 'terraform init'
+      }
+    }
   }
 }
