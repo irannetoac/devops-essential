@@ -48,8 +48,7 @@ pipeline {
 
     stage('provisioning the infrastructure'){
       steps {
-        sh 'cd terraform && ls'
-        sh 'terraform validate'
+        sh 'cd terraform && terraform init && terraform validate'
       }
     }
   }
