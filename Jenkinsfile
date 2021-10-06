@@ -54,8 +54,7 @@ pipeline {
 
     stage('deploying application') {
       steps {
-  //       sh 'ansible-galaxy collection install community.docker'
-        sh 'ansible --version'
+        sh 'ansible-galaxy collection install community.docker'
       }
     }
   }
