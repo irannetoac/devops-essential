@@ -46,10 +46,15 @@ pipeline {
 //       }
 //     }
 
-    stage('provisioning the infrastructure'){
-      steps {
-        sh 'cd terraform && terraform init && terraform plan && terraform validate '
-      }
+//     stage('provisioning the infrastructure'){
+//       steps {
+//         sh 'cd terraform && terraform init && terraform plan && terraform validate '
+//       }
+//     }
+
+    stage('deploying application') {
+//       sh 'ansible-galaxy collection install community.docker'
+      sh 'ansible --version'
     }
   }
 }
