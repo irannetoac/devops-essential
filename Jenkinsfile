@@ -49,10 +49,10 @@ pipeline {
     stage('provisioning the infrastructure'){
       steps {
           withCredentials([secretFile(
-              credentialsId: 'MyKeyPair',
-              keyFileVariable: 'AWS_KEY')])
+              credentialsId: 'ID_RSA_PUB',
+              keyFileVariable: 'ID_RSA_PUB')])
           {
-              sh 'cp "AWS_KEY" files/jenkins-aws.pem'
+              sh 'cp "ID_RSA_PUB" files/jenkins-aws.pub'
               sh 'cd terraform && ${TERRAFORM} init && ${TERRAFORM} plan -out && ${TERRAFORM} apply -auto-approve && cat tf_output.yml && ${TERRAFORM} destroy'
           }
       }
