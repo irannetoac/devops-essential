@@ -53,7 +53,7 @@ pipeline {
               keyFileVariable: 'MY_KEY_PAIR')])
           {
               sh 'touch jenkins-aws.pem && cat "$MY_KEY_PAIR" >> jenkins-aws.pem'
-              sh 'cd terraform && ${TERRAFORM} init && ${TERRAFORM} plan -out && ${TERRAFORM} apply -auto-approve && cat tf_output.yml && ${TERRAFORM} destroy'
+              sh 'cd terraform && ${TERRAFORM} init && ${TERRAFORM} plan && ${TERRAFORM} apply -auto-approve && cat tf_output.yml && ${TERRAFORM} destroy'
           }
       }
     }
