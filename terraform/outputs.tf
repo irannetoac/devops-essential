@@ -1,3 +1,8 @@
+output "app_public_ip" {
+    description = "Application public ipv4"
+    value = aws_instance.app_server.public_ip
+}
+
 output "db_ip" {
     description = "Database ipv4 address"
     value = "${aws_db_instance.database.address}"
@@ -24,3 +29,5 @@ output "db_identifier" {
   description = "Database id"
   value       = aws_db_instance.database.identifier
 }
+
+https://stackoverflow.com/questions/40353666/how-to-pass-terraform-outputs-variables-into-ansible-as-vars-files

@@ -52,11 +52,11 @@ pipeline {
       }
     }
 
-    stage('deploying application') {
-      steps {
-        sh 'ansible-galaxy collection install community.docker'
-      }
-    }
+//     stage('deploying application') {
+//       steps {
+//         sh 'ansible-galaxy collection install community.docker'
+//       }
+//     }
 
   }
 }
