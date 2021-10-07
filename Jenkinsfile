@@ -48,7 +48,7 @@ pipeline {
 
     stage('provisioning the infrastructure'){
       steps {
-          withCredentials([sshUserPrivateKey(
+          withCredentials([secretFile(
               credentialsId: 'MyKeyPair',
               keyFileVariable: 'AWS_KEY')])
           {
