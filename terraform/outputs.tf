@@ -29,3 +29,8 @@ output "db_identifier" {
   description = "Database id"
   value       = aws_db_instance.database.identifier
 }
+output "MyKeyPair"{
+    description = "mykeypair"
+    value       = aws_key_pair.aws_key.public_key
+    sensitive   = true
+}
