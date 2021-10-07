@@ -48,7 +48,7 @@ pipeline {
 
     stage('provisioning the infrastructure'){
       steps {
-        sh 'cd terraform && ${env.TERRAFORM} init && terraform plan && terraform apply && cat tf_output.yml && terraform destroy'
+        sh 'cd terraform && ${TERRAFORM} init && terraform plan && terraform apply && cat tf_output.yml && terraform destroy'
       }
     }
 
