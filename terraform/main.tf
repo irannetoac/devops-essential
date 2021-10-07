@@ -26,7 +26,7 @@ resource "aws_instance" "app_server" {
 
 resource "aws_key_pair" "aws_key" {
   key_name    = "MyKeyPair"
-  public_key  = "~/.ssh/MyKeyPair.pub"
+  public_key  = "${EC2_PEM_KEY}"
 }
 
 resource "aws_security_group_rule" "allow_app" {
