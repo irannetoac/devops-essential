@@ -67,7 +67,7 @@ pipeline {
   }
     post {
       always {
-          sh 'cd terraform && terraform destroy'
+          sh 'cd terraform && ${TERRAFORM} destroy'
       }
     }
 }
