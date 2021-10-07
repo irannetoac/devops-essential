@@ -30,7 +30,7 @@ resource "aws_key_pair" "aws_key" {
 }
 
 variable "ssh_private_key_file" {
-  default = "files/jenkins-aws.pub"
+  default = "files/jenkins-aws.pem"
 }
 
 resource "aws_security_group_rule" "allow_app" {

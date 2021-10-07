@@ -49,10 +49,10 @@ pipeline {
     stage('provisioning the infrastructure'){
       steps {
           withCredentials([sshUserPrivateKey(
-              credentialsId: 'ID_RSA_PUB',
-              keyFileVariable: 'ID_RSA_PUB')])
+              credentialsId: 'MY_KEY_PAIR',
+              keyFileVariable: 'MY_KEY_PAIR')])
           {
-              sh 'cp "ID_RSA_PUB" files/jenkins-aws.pub'
+              sh 'cp "MY_KEY_PAIR" files/jenkins-aws.pem'
               sh 'cd terraform && ${TERRAFORM} init && ${TERRAFORM} plan -out && ${TERRAFORM} apply -auto-approve && cat tf_output.yml && ${TERRAFORM} destroy'
           }
       }
