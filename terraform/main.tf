@@ -26,7 +26,11 @@ resource "aws_instance" "app_server" {
 
 resource "aws_key_pair" "aws_key" {
   key_name    = "MyKeyPair"
-  public_key  = "${EC2_PEM_KEY}"
+  public_key  = file(var.ssh_private_key_file)
+}
+
+variable "ssh_private_key_file" {
+  default = "files/jenkins-aws.pem"
 }
 
 resource "aws_security_group_rule" "allow_app" {

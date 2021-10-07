@@ -48,7 +48,13 @@ pipeline {
 
     stage('provisioning the infrastructure'){
       steps {
-        sh 'cd terraform && ${TERRAFORM} init && ${TERRAFORM} plan && ${TERRAFORM} apply -auto-approve && cat tf_output.yml && ${TERRAFORM} destroy'
+          withCredentials([sshUserPrivateKey(
+              credentialsId: 'MyKeyPair',
+              keyFileVariable: 'AWS_KEY')])
+          {
+              sh 'cp "AWS_KEY" files/jenkins-aws.pem'
+              sh 'cd terraform && ${TERRAFORM} init && ${TERRAFORM} plan -out && ${TERRAFORM} apply -auto-approve && cat tf_output.yml && ${TERRAFORM} destroy'
+          }
       }
     }
 
