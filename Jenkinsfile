@@ -52,7 +52,7 @@ pipeline {
               credentialsId: 'MY_KEY_PAIR',
               keyFileVariable: 'MY_KEY_PAIR')])
           {
-              sh 'cp "MY_KEY_PAIR" files/jenkins-aws.pem'
+              sh 'cp "$MY_KEY_PAIR" files/jenkins-aws.pem'
               sh 'cd terraform && ${TERRAFORM} init && ${TERRAFORM} plan -out && ${TERRAFORM} apply -auto-approve && cat tf_output.yml && ${TERRAFORM} destroy'
           }
       }
