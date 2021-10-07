@@ -26,7 +26,7 @@ resource "aws_instance" "app_server" {
 
 resource "aws_key_pair" "aws_key" {
   key_name    = "MyKeyPair"
-  public_key  = ssh_private_key_content
+  public_key  = local.ssh_private_key_content
 }
 
 variable "ssh_private_key_file" {
