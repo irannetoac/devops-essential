@@ -48,7 +48,7 @@ pipeline {
 
     stage('provisioning the infrastructure'){
       steps {
-          withCredentials([secretFile(
+          withCredentials([sshUserPrivateKey(
               credentialsId: 'ID_RSA_PUB',
               keyFileVariable: 'ID_RSA_PUB')])
           {
