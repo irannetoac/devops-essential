@@ -29,5 +29,3 @@ output "db_identifier" {
   description = "Database id"
   value       = aws_db_instance.database.identifier
 }
-
-https://stackoverflow.com/questions/40353666/how-to-pass-terraform-outputs-variables-into-ansible-as-vars-files
