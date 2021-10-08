@@ -57,14 +57,6 @@ pipeline {
           }
       }
     }
-
-    stage('deploying application') {
-      steps {
-        sh 'cd ansible && ansible-galaxy collection install community.docker'
-        sh '${ANSIBLE} --version'
-      }
-    }
-
   }
     post {
       always {
