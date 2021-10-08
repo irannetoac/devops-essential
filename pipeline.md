@@ -1,5 +1,10 @@
 ## CI/CD pipeline
 
+```
+Option 1 
+Git Provider + Jenkins + Docker + Artifactory + Terraform + AWS / GCP
+```
+
 Go to `terraform/` to check out terraform files
 
 See `Jenkinsfile` to see the pipeline configuration 
