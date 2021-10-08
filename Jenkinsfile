@@ -58,11 +58,9 @@ pipeline {
       }
     }
   }
-    post {
-      always {
-          sh 'cd terraform && ${TERRAFORM} destroy -auto-approve'
-      }
-    }
+//     post {
+//       always {
+//           sh 'cd terraform && ${TERRAFORM} destroy -auto-approve'
+//       }
+//     }
 }
-
-// ssh-keygen -y -f ../MyKeyPair.pem
