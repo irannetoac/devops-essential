@@ -81,6 +81,7 @@ resource "local_file" "tf_ansible_vars_file_new" {
     db_password: ${aws_db_instance.database.password}
     db_name: ${aws_db_instance.database.name}
     db_identifier: ${aws_db_instance.database.identifier}
+    my_key_pair: local.ssh_private_key_content
     DOC
   filename = "./tf_output.yml"
 }

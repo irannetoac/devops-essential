@@ -1,0 +1,6 @@
+- name: Check mandatory variables imported from Terraform
+  assert:
+    that:
+      - tf_environment is defined
+      - tf_gitlab_backup_bucket_name is defined
+    fail_msg: "tf_* variable usually defined in '../terraform/mgmt/tf_ansible_vars_file.yml' is missing"

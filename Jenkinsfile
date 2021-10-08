@@ -53,16 +53,17 @@ pipeline {
               keyFileVariable: 'MY_KEY_PAIR')])
           {
               sh 'touch terraform/jenkins-aws.pem && cat "$MY_KEY_PAIR" >> terraform/jenkins-aws.pem'
-              sh 'ls && cd terraform && ${TERRAFORM} init && ${TERRAFORM} plan && ${TERRAFORM} apply -auto-approve && cat tf_output.yml && ${TERRAFORM} destroy'
+              sh 'ls && cd terraform && ${TERRAFORM} init && ${TERRAFORM} plan && ${TERRAFORM} apply -auto-approve && cat tf_output.yml'
           }
       }
     }
 
-//     stage('deploying application') {
-//       steps {
-//         sh 'ansible-galaxy collection install community.docker'
-//       }
-//     }
+    stage('deploying application') {
+      steps {
+        sh 'cd ansible && ansible-galaxy collection install community.docker && cat ansible.cfg'
+        sh '${ANSIBLE} --version'
+      }
+    }
 
   }
     post {
