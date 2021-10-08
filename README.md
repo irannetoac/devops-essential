@@ -7,9 +7,9 @@ This is an application example from AC DevOps training. There are 2 main parts:
 
 ## Updated lesson
 
-* Lesson 2 (AWS): [here](https://gitlab.com/devopsclassroom/docker-lesson/-/blob/master/AWS.md)
-* Lesson 3 (IaaC): [here](https://gitlab.com/devopsclassroom/docker-lesson/-/blob/master/terraform.md)
-* Lesson 4 (CI/CD): [here](https://gitlab.com/devopsclassroom/docker-lesson/-/blob/master/pipeline.md)
+* Lesson 2 (AWS): [here](https://github.com/irannetoac/devops-essential/blob/master/AWS.md)
+* Lesson 3 (IaaC): [here](https://github.com/irannetoac/devops-essential/blob/master/terraform.md)
+* Lesson 4 (CI/CD): [here](https://github.com/irannetoac/devops-essential/blob/master/pipeline.md)
 
 ## Run with play with docker
 
