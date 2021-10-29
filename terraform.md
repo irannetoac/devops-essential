@@ -1,6 +1,6 @@
-## Terraform IaaC
+## Terraform Infrastructure as a code
 
-the files are inside terraform folder in root directory
+The files are inside terraform folder in root directory. Please take a look there
 
 To perform the resources creation I ran 
 ``` shell
@@ -10,4 +10,4 @@ To perform the resources creation I ran
 I was able to describe the ec2 and rds instance through terraform (main.tf). That's is my main accomplish.
 
 outputs.tf is an attempt of use terraform resource provisioned variables to use into the application itself
-setup.sh is an attempt to automate the application running through terraform
+setup.sh is an attempt to automate the application running through terraform.
