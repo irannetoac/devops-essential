@@ -1,5 +1,7 @@
 ## CI/CD pipeline
 
+There was 4 options. My choose was:
+
 ```
 Option 1 
 Git Provider + Jenkins + Docker + Artifactory + Terraform + AWS / GCP
