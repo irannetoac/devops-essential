@@ -1,3 +1,5 @@
+This is part of a training on AvenueCode projects.
+
 Author: Iran Macedo
 
 This is an application example from AC DevOps training. There are 2 main parts:
