@@ -1,3 +1,4 @@
+# Dockerfile in 2 phases
 FROM gradle:7.1.0-jdk11 AS BUILD_IMAGE
 ENV APP_HOME=/usr/app/
 WORKDIR $APP_HOME
